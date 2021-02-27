@@ -7,11 +7,11 @@
         </li>
     </ul>
     <label class="task">Task:
-        <input #taskName />
+        <input [(ngModel)]="task" />
     </label>
 
-    <button (click)="add(taskName.value); taskName.value=''">
+    <button (click)="add()">
         Add
     </button>
-    <label>จำนวน {{ addCnt }}</label>
+    <label>เพิ่ม {{ addCnt }} จำนวน</label>
 </div>

@@ -7,19 +7,20 @@ import { Component } from '@angular/core';
 })
 export class ToDoListComponent {
     tasks: string[] = ['Coffee', 'Breakfast'];
+    task: string;
     addCnt = 0;
 
-    add(taskName: string): void {
+    add(): void {
         let t: string;
-        t = taskName.trim();
+        t = this.task.trim();
 
-        if (!taskName) {
+        if (!this.task) {
             return;
         }
         this.tasks.push(t);
+        this.task = '';
         this.addCnt++;
     }
-
     delete(task: string): void {
         this.tasks = this.tasks.filter(h => h !== task);
     }
